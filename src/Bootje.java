@@ -1,12 +1,12 @@
 public class Bootje  extends Voertuig{
 
-    private String TypeBootje;
+    private String TypeBoot;
 
 
 
     public Bootje(String name, String soortVoertuig, double aantalPk, double weight, String TypeBootje) {
         super(name, soortVoertuig, aantalPk, weight);
-        this.TypeBootje = TypeBootje;
+        this.TypeBoot = TypeBootje;
     }
 
 
@@ -18,11 +18,11 @@ public class Bootje  extends Voertuig{
 
 
 
-    public  String getTypeVliegtuig() {
-        return TypeBootje;
+    public  String getTypeBootje() {
+        return TypeBoot;
     }
 
-    public void setTypeVliegtuig(String typeVliegtuig) {
-        this.TypeBootje = typeVliegtuig;
+    public void setTypeBootje(String TypeBootje) {
+        this.TypeBoot = TypeBootje;
     }
 }

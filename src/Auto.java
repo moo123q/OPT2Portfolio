@@ -11,4 +11,12 @@ public class Auto extends Voertuig {
         double topsnelheid = getAantalPk() / getWeight() * 1500;
         return topsnelheid;
     }
+
+    public String getTypeAuto() {
+        return TypeAuto;
+    }
+
+    public void setTypeAuto(String typeAuto) {
+        TypeAuto = typeAuto;
+    }
 }
