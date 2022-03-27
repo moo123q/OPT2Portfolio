@@ -53,7 +53,6 @@ public class Menu
 
         if(choice == 0)
         {
-            scanner.close();
             System.exit(0);
         }
         startApplication();

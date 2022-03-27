@@ -10,12 +10,26 @@ public class Methods {
     }
 
     public void deleteVoertuig() {
-        System.out.print("Welke Voertuig wilt u verkopen?\n" +
-                "Geef het voertuignummer op: ");
-        //zodat er geen conflict is tussen scanner.nextInt() en nextLine()
-        int voertuigNumber = scanner.nextInt();
-        scanner.nextLine();
-        voertuigList.deleteVoertuig(voertuigNumber);
+        if(voertuigList.getVoertuigen().size() != 0) {
+            System.out.print("Welke Voertuig wilt u verkopen?\n" +
+                    "Geef het voertuignummer op: ");
+            //zodat er geen conflict is tussen scanner.nextInt() en nextLine()
+            int voertuigNumber = scanner.nextInt();
+            scanner.nextLine();
+            voertuigList.deleteVoertuig(voertuigNumber);
+        }
+
+        else {
+            System.out.println("U heeft nog geen voertuigen ter beschikking\nWilt u een voertuig toevoegen(ja/nee)?");
+            String antwoord = scanner.nextLine();
+            if (antwoord.toLowerCase().equals("ja")){
+                addVoertuig();
+            }
+            else {
+                System.out.println("Ga maar verder");
+            }
+
+        }
     }
 
 

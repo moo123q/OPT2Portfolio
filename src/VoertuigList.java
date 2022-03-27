@@ -24,6 +24,7 @@ class VoertuigList {
 
 
     public void deleteVoertuig(int voertuigNumber) {
+
         for (int i = 0; i < voertuigen.size(); i++) {
             int voertuig = voertuigen.get(i).getVoertuignummer();
             if (voertuig == voertuigNumber) {
@@ -32,7 +33,7 @@ class VoertuigList {
                 return;
             }
         }
-        System.out.printf("%d voertuig was not found!\n", voertuigNumber);
+        System.out.printf("voertuig %d was not found!\n", voertuigNumber);
     }
 
 
