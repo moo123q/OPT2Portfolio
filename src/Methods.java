@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Methods {
+    Scanner scanner = new Scanner(System.in);
     private VoertuigList voertuigList = new VoertuigList();
 
     public Methods() {
@@ -9,7 +10,6 @@ public class Methods {
     }
 
     public void deleteVoertuig() {
-        Scanner scanner = new Scanner(System.in);
         System.out.print("Welke Voertuig wilt u verkopen?\n" +
                 "Geef het voertuignummer op: ");
         //zodat er geen conflict is tussen scanner.nextInt() en nextLine()
@@ -20,10 +20,9 @@ public class Methods {
 
 
 
-    // geen voertuig aanmaken maar een auto of een vliegtuig bij de gekozen keuze
+
     public void addVoertuig() {
 
-        Scanner scanner = new Scanner(System.in);
 
         try {
 
@@ -31,12 +30,17 @@ public class Methods {
             String name = scanner.nextLine();
             System.out.println("Wat voor soort voertuig is het?");
             String soortVoertuig = scanner.nextLine();
+            while (!soortVoertuig.toLowerCase().equals("auto") && !soortVoertuig.toLowerCase().equals("boot")){
+                System.out.println("Verkeerde invoer! probeer het opnieuw");
+                System.out.println("Wat voor soort voertuig is het?");
+                soortVoertuig = scanner.nextLine();
+            }
             System.out.println("Geef het Gewicht op (KG)");
             double weight = scanner.nextDouble();
             System.out.println("Geef het aantal PK op");
             double aantalPk = scanner.nextDouble();
-            if(soortVoertuig.equals("Vliegtuig") || soortVoertuig.equals("vliegtuig")){
-                System.out.println("Wat voor type vliegtuig is het?");
+            if(soortVoertuig.toLowerCase().equals("boot")){
+                System.out.println("Wat voor type boot is het?");
                 String TypeBoot = scanner.nextLine();
                 Voertuig boot = new Bootje(name, soortVoertuig, aantalPk, weight, TypeBoot) {
                 };
@@ -79,7 +83,6 @@ public class Methods {
 
 
     public void getTopsnelheid() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("van welke auto wilt u de topsnelheid weten?\n" +
                 "geef het voertuignummer op:");
         int voertuigNumber = scanner.nextInt();
@@ -90,7 +93,6 @@ public class Methods {
     }
 
     public void getWeight() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("van welke auto wilt u de topsnelheid weten?\n" +
                 "geef het voertuignummer op:");
         int voertuigNumber = scanner.nextInt();
@@ -99,7 +101,6 @@ public class Methods {
     }
 
     public void getSoortVoertuig() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("van welke auto wilt u de topsnelheid weten?\n" +
                 "geef het voertuignummer op:");
         int voertuigNumber = scanner.nextInt();
@@ -109,7 +110,6 @@ public class Methods {
 
 
     public void getInfo() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("van welke voertuig wilt u de info weten?");
         int voertuigNummer = scanner.nextInt();
         double aantalPk = voertuigList.getSpecifiekVoertuig(voertuigNummer).getAantalPk();
