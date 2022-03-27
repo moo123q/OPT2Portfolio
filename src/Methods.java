@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
 public class Methods {
+
     Scanner scanner = new Scanner(System.in);
     private VoertuigList voertuigList = new VoertuigList();
 
