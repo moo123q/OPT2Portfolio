@@ -33,7 +33,6 @@ public class Menu
             methods.displayVoertuigList();
         }
         if(choice == 2) {
-
             methods.addVoertuig();
         }
         if(choice == 3) {
