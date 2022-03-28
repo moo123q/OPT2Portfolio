@@ -1,22 +1,15 @@
 public class Auto extends Voertuig {
-    private String TypeAuto;
+    private String autoMerk;
 
-    public Auto(String name, String soortVoertuig, double aantalPk, double weight, String TypeAuto) {
-        super(name, soortVoertuig, aantalPk, weight);
-        this.TypeAuto = TypeAuto;
+    public Auto(String name, String soortVoertuig, double aantalPk, double weight, Motorblok motorblok, String autoMerk) {
+        super(name, soortVoertuig, aantalPk, weight, motorblok);
+        this.autoMerk = autoMerk;
     }
 
     @Override
     public double getTopsnelheid() {
-        double topsnelheid = getAantalPk() / getWeight() * 1500;
+        double topsnelheid = getAantalPk() / getWeight() * 2500;
         return topsnelheid;
     }
 
-    public String getTypeAuto() {
-        return TypeAuto;
-    }
-
-    public void setTypeAuto(String typeAuto) {
-        TypeAuto = typeAuto;
-    }
 }

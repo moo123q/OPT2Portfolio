@@ -14,10 +14,15 @@ public class Motorblok {
         this.soortMotor = soortMotor;
     }
 
-    public boolean isZuinig() {
-        if (!soortMotor.toLowerCase().equals("diesel")) {
-            return false;
+    public String isZuinig() {
+        if (soortMotor.toLowerCase().equals("diesel")) {
+            return "Deze voertuig is zuinig";
         }
-        return true;
+        else {
+            return "Deze voertuig is niet zuinig";
+        }
+
     }
+
+
 }

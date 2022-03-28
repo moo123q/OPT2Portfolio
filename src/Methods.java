@@ -16,7 +16,7 @@ public class Methods {
             //zodat er geen conflict is tussen scanner.nextInt() en nextLine()
             int voertuigNumber = scanner.nextInt();
             scanner.nextLine();
-            voertuigList.deleteVoertuig(voertuigNumber);
+            voertuigList.verwijderVoertuig(voertuigNumber);
         }
 
         else {
@@ -53,10 +53,13 @@ public class Methods {
             double weight = scanner.nextDouble();
             System.out.println("Geef het aantal PK op");
             double aantalPk = scanner.nextDouble();
+            System.out.println("Wat voor soort motor heeft het vroertuig?\nKerosine, Benzine of diesel?");
+            Motorblok motorblok = new Motorblok(scanner.nextLine());
+            motorblok.setSoortMotor(scanner.nextLine());
             if(soortVoertuig.toLowerCase().equals("boot")){
                 System.out.println("Wat voor type boot is het?");
                 String TypeBoot = scanner.nextLine();
-                Voertuig boot = new Bootje(name, soortVoertuig, aantalPk, weight, TypeBoot) {
+                Voertuig boot = new Bootje(name, soortVoertuig, aantalPk, weight, motorblok,TypeBoot) {
                 };
 
                 voertuigList.addVoertuig(boot);
@@ -67,7 +70,7 @@ public class Methods {
             if(soortVoertuig.toLowerCase().equals("auto")){
                 System.out.println("Wat voor type Auto is het?");
                 String TypeAuto = scanner.nextLine();
-                Voertuig auto = new Auto(name, soortVoertuig, aantalPk, weight, TypeAuto) {
+                Voertuig auto = new Auto(name, soortVoertuig, aantalPk, weight, motorblok, TypeAuto) {
                 };
 
                 voertuigList.addVoertuig(auto);
@@ -129,7 +132,8 @@ public class Methods {
         double aantalPk = voertuigList.getSpecifiekVoertuig(voertuigNummer).getAantalPk();
         double weight = voertuigList.getSpecifiekVoertuig(voertuigNummer).getWeight();
         String soortVoertuig = voertuigList.getSpecifiekVoertuig(voertuigNummer).getSoortVoertuig();
-        System.out.println("Dit is een: " + soortVoertuig + "\nHet gewicht is: " + weight + "kg" +  "\nHet aantal pk is: " + aantalPk + "\nHet voertuignummer is: " + voertuigNummer);
+        Motorblok mo = voertuigList.getSpecifiekVoertuig(voertuigNummer).getMotorblok();
+        System.out.println("Dit is een: " + soortVoertuig + "\nHet gewicht is: " + weight + "kg" +  "\nHet aantal pk is: " + aantalPk + "\nHet voertuignummer is: " + voertuigNummer + "\ntest: " + mo.isZuinig());
     }
 
 }

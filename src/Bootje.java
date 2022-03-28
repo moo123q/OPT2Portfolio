@@ -1,12 +1,12 @@
 public class Bootje  extends Voertuig{
 
-    private String TypeBoot;
+    private String bootMerk;
 
 
 
-    public Bootje(String name, String soortVoertuig, double aantalPk, double weight, String TypeBootje) {
-        super(name, soortVoertuig, aantalPk, weight);
-        this.TypeBoot = TypeBootje;
+    public Bootje(String name, String soortVoertuig, double aantalPk, double weight, Motorblok motorblok, String bootMerk) {
+        super(name, soortVoertuig, aantalPk, weight, motorblok);
+        this.bootMerk = bootMerk;
     }
 
 
@@ -17,12 +17,11 @@ public class Bootje  extends Voertuig{
     }
 
 
-
-    public  String getTypeBootje() {
-        return TypeBoot;
+    public String getBootMerk() {
+        return bootMerk;
     }
 
-    public void setTypeBootje(String TypeBootje) {
-        this.TypeBoot = TypeBootje;
+    public void setBootMerk(String bootMerk) {
+        this.bootMerk = bootMerk;
     }
 }

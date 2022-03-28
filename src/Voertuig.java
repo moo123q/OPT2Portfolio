@@ -1,4 +1,5 @@
 public class Voertuig {
+    Motorblok motorblok;
 
     private double aantalPk;
     private double topsnelheid;
@@ -9,13 +10,18 @@ public class Voertuig {
     private Integer voertuignummer = 1;
     private static Integer volgendeVoertuignummer = 1;
 
-    public Voertuig(String name, String soortVoertuig, double aantalPk, double weight){
+    public Voertuig(String name, String soortVoertuig, double aantalPk, double weight, Motorblok motorblok){
         this.aantalPk = aantalPk;
         this.weight = weight;
         this.name = name;
+        this.motorblok = motorblok;
         this.soortVoertuig = soortVoertuig;
         voertuignummer = volgendeVoertuignummer;
         volgendeVoertuignummer++;
+    }
+
+    public Motorblok getMotorblok(){
+        return motorblok;
     }
 
     public String getName() {

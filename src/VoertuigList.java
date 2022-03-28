@@ -23,7 +23,7 @@ class VoertuigList {
     }
 
 
-    public void deleteVoertuig(int voertuigNumber) {
+    public void verwijderVoertuig(int voertuigNumber) {
 
         for (int i = 0; i < voertuigen.size(); i++) {
             int voertuig = voertuigen.get(i).getVoertuignummer();
@@ -34,16 +34,6 @@ class VoertuigList {
             }
         }
         System.out.printf("voertuig %d was not found!\n", voertuigNumber);
-    }
-
-
-
-    public String toString() {
-        String voertuigenToString = "";
-        for (int i = 0; i < voertuigen.size(); i++) {
-            voertuigenToString = String.format("voertuignummer: %d%nvoertuigennaam: %s%n", voertuigen.get(i).getVoertuignummer(), voertuigen.get(i).getName());
-        }
-        return voertuigenToString;
     }
 
     public void addVoertuig(Voertuig voertuig) {
