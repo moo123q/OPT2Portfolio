@@ -11,9 +11,6 @@ class VoertuigListTest {
     Voertuig mo = new Voertuig("Lambo", "Aventador", 780, 1500, motorblok);
 
 
-
-
-
     @org.junit.jupiter.api.Test
     void getSpecifiekVoertuig() {
         //voertuignummer is hier 1
