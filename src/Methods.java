@@ -85,6 +85,7 @@ public class Methods {
         }
     }
 
+
     public void displayVoertuigList () {
         ArrayList<Voertuig> voertuigen = voertuigList.getVoertuigen();
         System.out.println("Voertuignummer  |  Naam");

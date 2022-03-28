@@ -24,7 +24,7 @@ public class Menu
                         "3) Voertuig Verkopen\n" +
                         "4) Topsnelheid\n" +
                         "5) Informatie van de auto's opvragen\n" +
-                        "0) Exit\n");;
+                        "0) Exit\n");
 
         System.out.print("Uw keuze: ");
         int choice = scanner.nextInt();
@@ -53,6 +53,7 @@ public class Menu
 
         if(choice == 0)
         {
+            System.out.println("Fijne dag!");
             System.exit(0);
         }
         startApplication();

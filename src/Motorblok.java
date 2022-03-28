@@ -16,10 +16,10 @@ public class Motorblok {
 
     public String isZuinig() {
         if (soortMotor.toLowerCase().equals("diesel")) {
-            return "Deze voertuig is zuinig";
+            return "Dit voertuig is zuinig";
         }
         else {
-            return "Deze voertuig is niet zuinig";
+            return "Dit voertuig is niet zuinig";
         }
 
     }

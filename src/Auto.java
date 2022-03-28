@@ -12,4 +12,11 @@ public class Auto extends Voertuig {
         return topsnelheid;
     }
 
+    public String getAutoMerk() {
+        return autoMerk;
+    }
+
+    public void setAutoMerk(String autoMerk) {
+        this.autoMerk = autoMerk;
+    }
 }
